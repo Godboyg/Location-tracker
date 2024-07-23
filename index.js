@@ -1,6 +1,8 @@
-const socket = io('http://localhost:5000');
+const socket = io();
 
-console.log(socket);
+socket.on("connect",()=>{
+    console.log("socket connected to server");
+})
 
 if(navigator.geolocation){
     navigator.geolocation.watchPosition((position)=>{
