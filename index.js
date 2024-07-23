@@ -1,5 +1,7 @@
 const socket = io('http://localhost:3000');
 
+console.log(socket);
+
 if(navigator.geolocation){
     navigator.geolocation.watchPosition((position)=>{
         const { latitude, longitude } = position.coords;
