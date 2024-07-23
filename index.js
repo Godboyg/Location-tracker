@@ -1,4 +1,5 @@
-const socket = io();
+const ENDPOINT = "http://localhost:5000/";
+const socket = io(ENDPOINT,{ transports:['websocket'] });
 
 if(navigator.geolocation){
     navigator.geolocation.watchPosition((position)=>{
