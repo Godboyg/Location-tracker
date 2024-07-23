@@ -4,8 +4,15 @@ const { Server } = require("socket.io");
 const path = require("path");
 const http = require("http");
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+    methods: ['GET', 'POST']
+  }
+});
+const cors = require('cors');
 
+app.use(cors());
 app.set("view engine","ejs");
 app.use(express.static(path.join(__dirname,"public")));
 
